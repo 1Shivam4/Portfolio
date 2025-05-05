@@ -1,0 +1,18 @@
+:root {
+  --text-primary: white;
+  --text-secondary: black;
+
+  --bg-primary: #ea4020;
+  --bg-secondary: black;
+
+  --fs-normal: 18px;
+  --fs-small: 12px;
+  --fs-large: 24px;
+  --fs-xlarge: 28px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
