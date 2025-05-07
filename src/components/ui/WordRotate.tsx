@@ -35,9 +35,9 @@ export default function WordRotator({ words }: WordRotatorProps) {
 
   useEffect(() => {
     if (lineRef.current) {
-      const lineHeight = parseFloat(
-        getComputedStyle(lineRef.current).lineHeight
-      );
+      // const lineHeight = parseFloat(
+      //   getComputedStyle(lineRef.current).lineHeight
+      // );
       const top = lineRef.current.getBoundingClientRect().top;
       if (!lineBreaks.includes(top)) {
         setLineBreaks((prev) => [...prev, top]);
