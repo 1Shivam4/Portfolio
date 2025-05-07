@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import AnimatedCharacter from "./animations/AnimateCharacters";
 
 interface WordRotatorProps {
   words: string[];
@@ -35,9 +35,6 @@ export default function WordRotator({ words }: WordRotatorProps) {
 
   useEffect(() => {
     if (lineRef.current) {
-      // const lineHeight = parseFloat(
-      //   getComputedStyle(lineRef.current).lineHeight
-      // );
       const top = lineRef.current.getBoundingClientRect().top;
       if (!lineBreaks.includes(top)) {
         setLineBreaks((prev) => [...prev, top]);
@@ -57,29 +54,5 @@ export default function WordRotator({ words }: WordRotatorProps) {
         ))}
       </span>
     </div>
-  );
-}
-
-interface AnimatedCharacterProps {
-  char: string;
-  delay?: number;
-  innerRef?: React.Ref<HTMLSpanElement> | null;
-}
-
-function AnimatedCharacter({
-  char,
-  delay = 0,
-  innerRef,
-}: AnimatedCharacterProps) {
-  return (
-    <motion.span
-      initial={{ opacity: 0, rotateX: 90 }}
-      animate={{ opacity: 1, rotateX: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut", delay }}
-      className="inline-block"
-      ref={innerRef}
-    >
-      {char}
-    </motion.span>
   );
 }
