@@ -812,7 +812,8 @@ class Road {
     const options = this.options;
     const segments = 100;
     const geometry = new THREE.PlaneGeometry(
-      isRoad ? options.roadWidth : options.islandWidth,
+      // isRoad ? options.roadWidth : options.islandWidth,
+      width,
       options.length,
       20,
       segments

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import AnimatedCharacter from "./animations/AnimateCharacters";
+import Hyperspeed from "./animations/HyperSpeed";
 
 interface WordRotatorProps {
   words: string[];
@@ -44,6 +45,7 @@ export default function WordRotator({ words }: WordRotatorProps) {
 
   return (
     <div className="text-primary whitespace-pre-wrap leading-relaxed w-full max-w-xl">
+      <Hyperspeed />
       <span className="block" style={{ minHeight: "2em" }}>
         {displayedWord.split("").map((char, i) => (
           <AnimatedCharacter
