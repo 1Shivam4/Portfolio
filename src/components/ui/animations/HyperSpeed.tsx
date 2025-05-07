@@ -808,12 +808,11 @@ class Road {
     this.uTime = { value: 0 };
   }
 
-  createPlane(side: number, width: number, isRoad: boolean) {
+  createPlane(side: number, isRoad: boolean) {
     const options = this.options;
     const segments = 100;
     const geometry = new THREE.PlaneGeometry(
-      // isRoad ? options.roadWidth : options.islandWidth,
-      width,
+      isRoad ? options.roadWidth : options.islandWidth,
       options.length,
       20,
       segments
@@ -883,9 +882,9 @@ class Road {
   }
 
   init() {
-    this.leftRoadWay = this.createPlane(-1, this.options.roadWidth, true);
-    this.rightRoadWay = this.createPlane(1, this.options.roadWidth, true);
-    this.island = this.createPlane(0, this.options.islandWidth, false);
+    this.leftRoadWay = this.createPlane(-1, true);
+    this.rightRoadWay = this.createPlane(1, true);
+    this.island = this.createPlane(0, false);
   }
 
   update(time: number) {
@@ -1285,7 +1284,9 @@ const Hyperspeed: FC<HyperspeedProps> = ({ effectOptions = {} }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div id="lights" ref={hyperspeed}></div>;
+  return (
+    <div id="lights" ref={hyperspeed} className="left-0 top-0 opacity-10"></div>
+  );
 };
 
 export default Hyperspeed;

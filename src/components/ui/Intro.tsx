@@ -3,6 +3,7 @@ import WordRotator from "./WordRotate";
 import { Button } from "./Button";
 import "../styles/css/basics.css";
 import banner from "/assets/home-banner.png";
+import Hyperspeed from "./animations/HyperSpeed";
 
 const services = [
   "Web Development",
@@ -43,6 +44,7 @@ export default function Intro() {
           </div>
         </div>
       </div>
+      <Hyperspeed />
     </SectionWrapper>
   );
 }
