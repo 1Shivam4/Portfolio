@@ -1284,9 +1284,7 @@ const Hyperspeed: FC<HyperspeedProps> = ({ effectOptions = {} }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <div id="lights" ref={hyperspeed} className="left-0 top-0 opacity-10"></div>
-  );
+  return <div id="lights" ref={hyperspeed} className="left-0 top-0"></div>;
 };
 
 export default Hyperspeed;

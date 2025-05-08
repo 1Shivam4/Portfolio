@@ -516,8 +516,8 @@ class Y extends MeshPhysicalMaterial {
    Constants & Utility Variables
    ========================================================= */
 const XConfig = {
-  count: 200,
-  colors: [0, 0, 0],
+  count: 150,
+  colors: [255, 102, 0],
   ambientColor: 0xffffff,
   ambientIntensity: 1,
   lightIntensity: 200,
@@ -875,7 +875,7 @@ const Ballpit: React.FC<BallpitProps> = ({
 
   return (
     <canvas
-      className={`${className} absolute top-0 left-0 opacity-15`}
+      className={`${className} absolute top-0 left-0 -z-10`}
       ref={canvasRef}
     />
   );
