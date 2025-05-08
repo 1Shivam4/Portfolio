@@ -1,30 +1,27 @@
-import styled from "styled-components";
-import { FlexCol, FlexRow, SectionWrapper } from "../styles/GlobalStyles";
-import AboutMe from "/assets/about-me.png";
+import { SectionWrapper } from "../styles/GlobalStyles";
+import StereoScene from "./animations/StereoScreen";
 
 interface Skills {
   skillName: string;
   tools: string[];
+  note: string;
 }
 
 const skillsAndTools: Skills[] = [
-  {
-    skillName: "Design Tools",
-    tools: ["Figma", "Canva", "Draw.io", "Sketch"],
-  },
   {
     skillName: "Technologies and Skills",
     tools: [
       "Typescript",
       "Python",
-      "Data Analytics",
       "React",
       "NodeJS",
       "MongoDB",
       "MySQL",
+      "Data Analytics",
       "Google Cloud",
       "Networking",
     ],
+    note: "Proficient in full-stack development and data analytics, with hands-on experience in building scalable web applications and leveraging cloud infrastructure.",
   },
   {
     skillName: "Development Tools",
@@ -36,56 +33,61 @@ const skillsAndTools: Skills[] = [
       "Github",
       "Linux/Unix",
     ],
+    note: "Comfortable with modern development environments and version control systems, ensuring efficient and collaborative workflows.",
   },
   {
     skillName: "AI tools",
-    tools: ["ChatGPT", "Deep-seek ", "Claude", "Gemini"],
+    tools: ["ChatGPT", "Deep-seek", "Claude", "Gemini"],
+    note: "Actively use AI tools for research, automation, rapid prototyping, and enhancing productivity across development and content generation tasks.",
+  },
+  {
+    skillName: "Design Tools",
+    tools: ["Figma", "Canva", "Draw.io", "Sketch"],
+    note: "Skilled in creating clean UI/UX designs, wireframes, and system diagrams to communicate and visualize ideas effectively.",
   },
 ];
 
 export default function Skills() {
   return (
-    <SectionWrapper className="overflow-hidden">
-      <div className="mx-4 md:mx-24 flex justify-between  items-center  flex-wrap gap-2">
-        <Avatar className="w-full md:w-40p">
-          <img src={AboutMe} />
-        </Avatar>
-        <FlexCol className="w-full md:w-60p">
-          <div>
-            <HeadingH3>About Me</HeadingH3>
-            <p className="text-justify">
-              Hi, I'm Shivam, a software engineer with expertise in the MERN
-              stack (MongoDB, Express.js, React, Node.js). I'm skilled in
-              building full-stack web applications and comfortable working with
-              a wide range of technologies beyond the MERN stack. I have
-              hands-on experience in backend development, RESTful APIs, database
-              design, and scalable architectures.
-            </p>
-          </div>
+    <SectionWrapper className="relative overflow-hidden z-10 py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">My Skills</h1>
+          <p className="text-lg max-w-2xl mx-auto">
+            Technologies and tools I work with on a daily basis
+          </p>
+        </div>
 
-          <ul>
-            {skillsAndTools.map((skill) => (
-              <div key={skill.skillName} className="my-5">
-                <HeadingH3>{skill.skillName}</HeadingH3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {skillsAndTools.map((skill) => (
+            <div
+              key={skill.skillName}
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-700"
+            >
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 text-center">
+                  {skill.skillName}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-center">
+                  {skill.note}
+                </p>
 
-                <FlexRow className="gap-4 flex-wrap">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {skill.tools.map((tool) => (
-                    <li key={tool}>{tool}</li>
+                    <span
+                      key={tool}
+                      className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200"
+                    >
+                      {tool}
+                    </span>
                   ))}
-                </FlexRow>
+                </div>
               </div>
-            ))}
-          </ul>
-        </FlexCol>
+            </div>
+          ))}
+        </div>
       </div>
+      <StereoScene />
     </SectionWrapper>
   );
 }
-
-const Avatar = styled.div`
-  width: 330px;
-`;
-const HeadingH3 = styled.h3`
-  font-size: 20px;
-  font-weight: 700;
-`;
