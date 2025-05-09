@@ -18,7 +18,7 @@ const services = [
 
 export default function Intro() {
   return (
-    <SectionWrapper className="relative overflow-hidden">
+    <SectionWrapper className="relative overflow-hidden bg-slate-50">
       <div className="mx-4 md:mx-24 flex justify-center items-center gap-20">
         <div className="pr-24">
           <p className="my-2 font-bold text-xl ">Hi There, I'm</p>

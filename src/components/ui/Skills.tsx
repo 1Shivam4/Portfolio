@@ -1,55 +1,10 @@
 import { SectionWrapper } from "../styles/GlobalStyles";
 import StereoScene from "./animations/StereoScreen";
-
-interface Skills {
-  skillName: string;
-  tools: string[];
-  note: string;
-}
-
-const skillsAndTools: Skills[] = [
-  {
-    skillName: "Technologies and Skills",
-    tools: [
-      "Typescript",
-      "Python",
-      "React",
-      "NodeJS",
-      "MongoDB",
-      "MySQL",
-      "Data Analytics",
-      "Google Cloud",
-      "Networking",
-    ],
-    note: "Proficient in full-stack development and data analytics, with hands-on experience in building scalable web applications and leveraging cloud infrastructure.",
-  },
-  {
-    skillName: "Development Tools",
-    tools: [
-      "VSCode",
-      "Cursor AI",
-      "PyCharm IDE",
-      "Git",
-      "Github",
-      "Linux/Unix",
-    ],
-    note: "Comfortable with modern development environments and version control systems, ensuring efficient and collaborative workflows.",
-  },
-  {
-    skillName: "AI tools",
-    tools: ["ChatGPT", "Deep-seek", "Claude", "Gemini"],
-    note: "Actively use AI tools for research, automation, rapid prototyping, and enhancing productivity across development and content generation tasks.",
-  },
-  {
-    skillName: "Design Tools",
-    tools: ["Figma", "Canva", "Draw.io", "Sketch"],
-    note: "Skilled in creating clean UI/UX designs, wireframes, and system diagrams to communicate and visualize ideas effectively.",
-  },
-];
+import { skillsAndTools } from "../../data/allData.ts";
 
 export default function Skills() {
   return (
-    <SectionWrapper className="relative overflow-hidden z-10 py-16 bg-red-50">
+    <SectionWrapper className="relative overflow-hidden z-10 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6 text-gray-900">My Skills</h1>
@@ -74,7 +29,7 @@ export default function Skills() {
                   {skill.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-red-100 text-gray-900 border border-orange-200 hover:bg-red-200 transition-colors"
+                      className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-slate-50 text-gray-900 border border-orange-200 hover:bg-red-200 transition-colors"
                     >
                       {tool}
                     </span>
