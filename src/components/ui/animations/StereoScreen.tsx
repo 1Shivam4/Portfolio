@@ -875,7 +875,7 @@ const Ballpit: React.FC<BallpitProps> = ({
 
   return (
     <canvas
-      className={`${className} absolute top-0 left-0 -z-10`}
+      className={`${className} absolute top-0 left-0 -z-10 opacity-20`}
       ref={canvasRef}
     />
   );

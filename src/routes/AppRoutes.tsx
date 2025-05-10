@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainNavigation from "../components/layout/Mainnavigation";
 import Landing from "../pages/Landing";
+import ProjectDetails from "../components/ui/ProjectDescription";
 
 function AppRoutes() {
   return (
@@ -8,6 +9,7 @@ function AppRoutes() {
       <MainNavigation>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/:projectName" element={<ProjectDetails />} />
         </Routes>
       </MainNavigation>
     </BrowserRouter>
