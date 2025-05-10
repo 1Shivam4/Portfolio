@@ -1,5 +1,4 @@
 import { SectionWrapper } from "../styles/GlobalStyles";
-import StereoScene from "./animations/StereoScreen";
 import { skillsAndTools } from "../../data/allData.ts";
 
 export default function Skills() {
@@ -40,7 +39,6 @@ export default function Skills() {
           ))}
         </div>
       </div>
-      <StereoScene />
     </SectionWrapper>
   );
 }

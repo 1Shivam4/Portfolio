@@ -1,5 +1,4 @@
 import { SectionWrapper } from "../styles/GlobalStyles";
-import GlobeAnimation from "./animations/GlobeAnimation";
 
 interface ExperienceProps {
   title: string;
@@ -60,8 +59,6 @@ export default function Experience() {
         <EduExprCard data={experinceData} heading="Experience" />
         <EduExprCard data={educationData} heading="Education" />
       </div>
-
-      <GlobeAnimation />
     </SectionWrapper>
   );
 }
