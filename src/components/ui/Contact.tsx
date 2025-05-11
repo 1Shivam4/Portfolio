@@ -108,13 +108,11 @@ export default function Contact() {
     }
   };
   return (
-    <SectionWrapper className="bg-slate-50" id="contact">
-      <h2 className="my-5 text-4xl font-bold text-slate-600 text-center">
-        Contact
-      </h2>
+    <SectionWrapper className="bg-slate-100" id="contact">
+      <h2 className="text-4xl font-bold text-slate-600 text-center">Contact</h2>
 
       <div className="mx-4 md:mx-24 flex flex-col md:flex-row justify-between gap-10">
-        <div className="md:w-1/3 flex flex-col gap-4">
+        <div className="py-3 md:w-1/3 flex flex-col gap-4">
           <h3 className="text-xl font-semibold text-slate-600 mb-2">
             Social Links
           </h3>

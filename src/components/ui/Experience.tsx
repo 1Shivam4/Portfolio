@@ -54,12 +54,13 @@ const educationData: EducationProps[] = [
 
 export default function Experience() {
   return (
-    <SectionWrapper className="relative bg-slate-50 m-auto" id="experience">
-      <div className="mx-4 md:mx-24 flex justify-between align-middle flex-wrap relative z-10 pt-20">
-        <EduExprCard data={experinceData} heading="Experience" />
-        <EduExprCard data={educationData} heading="Education" />
-      </div>
-    </SectionWrapper>
+    <div
+      className="w-full py-10 bg-slate-100 px-4 md:px-32 flex justify-between align-middle flex-wrap relative z-10 "
+      id="experience"
+    >
+      <EduExprCard data={experinceData} heading="Experience" />
+      <EduExprCard data={educationData} heading="Education" />
+    </div>
   );
 }
 
@@ -72,28 +73,37 @@ interface EducationCardProps {
 
 const EduExprCard: React.FC<EducationCardProps> = ({ data, heading }) => {
   return (
-    <div>
-      <h2 className="my-5 text-4xl font-bold text-slate-600 text-center md:text-start">
+    <div className="w-full md:w-1/2">
+      <h2 className="my-5 text-2xl md:text-4xl font-bold text-slate-600 text-center md:text-start">
         {heading}
       </h2>
       {data.map((item, idx) => (
-        <div key={idx} className="my-5 m-auto flex gap-10 align-middle">
+        <div
+          key={idx}
+          className="my-5 m-auto flex  gap-5 md:gap-10 align-middle"
+        >
           <span className="mt-1 h-5 w-5 rounded-full border-2 border-rose-600"></span>
           <div>
             {"course" in item ? (
               <>
-                <h3 className="text-2xl font-bold">{item.course}</h3>
-                <p className="text-lg text-gray-600">{item.institute}</p>
+                <h3 className="text-lg md:text-2xl font-bold">{item.course}</h3>
+                <p className="text-base md:text-lg text-gray-600">
+                  {item.institute}
+                </p>
               </>
             ) : (
               <>
-                <h3 className="text-2xl font-bold">{item.title}</h3>
-                <p className="text-lg text-gray-600">{item.company}</p>
+                <h3 className="text-lg md:text-2xl font-bold">{item.title}</h3>
+                <p className="text-base md:text-lg text-gray-600">
+                  {item.company}
+                </p>
               </>
             )}
-            <p className="text-lg text-gray-600">{item.location}</p>
+            <p className="text-base md:text-lg text-gray-600">
+              {item.location}
+            </p>
             {item.startDate && (
-              <p className="text-lg text-gray-600">
+              <p className="text-base md:text-lg text-gray-600">
                 {item.startDate} - {item.endDate}
               </p>
             )}

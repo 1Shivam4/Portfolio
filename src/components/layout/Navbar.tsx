@@ -12,7 +12,7 @@ const navItems = [
     route: "skills",
   },
   {
-    name: "Portfolio",
+    name: "Experience",
     route: "experience",
   },
   {
