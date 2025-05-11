@@ -1,5 +1,3 @@
-import { SectionWrapper } from "../styles/GlobalStyles";
-
 interface ExperienceProps {
   title: string;
   company: string;
