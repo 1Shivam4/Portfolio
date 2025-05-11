@@ -19,7 +19,7 @@ const ProjectIntroProps: ProjectIntro[] = [
 
 export default function Projects() {
   return (
-    <SectionWrapper className="relative z-10">
+    <SectionWrapper className="relative z-10" id="projects">
       <h2 className="my-5 text-4xl font-bold text-slate-600 text-center">
         Projects
       </h2>

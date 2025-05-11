@@ -3,7 +3,7 @@ import { skillsAndTools } from "../../data/allData.ts";
 
 export default function Skills() {
   return (
-    <SectionWrapper className="relative overflow-hidden z-10 py-16">
+    <SectionWrapper className="relative overflow-hidden z-10 py-16" id="skills">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6 text-gray-900">My Skills</h1>

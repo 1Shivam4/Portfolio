@@ -8,4 +8,14 @@ import {
   faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 
-library.add({ faFacebook, faLinkedin, faTwitter, faInstagram, faDiscord });
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+  faFacebook,
+  faLinkedin,
+  faTwitter,
+  faInstagram,
+  faDiscord,
+  faBars,
+  faXmark
+);

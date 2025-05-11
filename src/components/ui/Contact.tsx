@@ -83,6 +83,7 @@ export default function Contact() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const [isFormSubmitting, setIsFormSubmitting] = useState(false);
@@ -100,13 +101,14 @@ export default function Contact() {
 
     if (emailResponse.success) {
       setIsFormSubmitting(false);
+      reset();
       return toast.success(
         "Thank you for your response! I'll connect with you soon."
       );
     }
   };
   return (
-    <SectionWrapper className="bg-slate-50">
+    <SectionWrapper className="bg-slate-50" id="contact">
       <h2 className="my-5 text-4xl font-bold text-slate-600 text-center">
         Contact
       </h2>

@@ -54,7 +54,7 @@ const educationData: EducationProps[] = [
 
 export default function Experience() {
   return (
-    <SectionWrapper className="relative bg-slate-50 m-auto">
+    <SectionWrapper className="relative bg-slate-50 m-auto" id="experience">
       <div className="mx-4 md:mx-24 flex justify-between align-middle flex-wrap relative z-10 pt-20">
         <EduExprCard data={experinceData} heading="Experience" />
         <EduExprCard data={educationData} heading="Education" />
