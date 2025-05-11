@@ -4,6 +4,9 @@ import { Button } from "./Button";
 import { makeRequestWithForm } from "../../lib/Document.services";
 import { Toaster, toast } from "sonner";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 interface FormProps {
   fieldType: "input" | "textarea";
@@ -12,12 +15,6 @@ interface FormProps {
   required: boolean;
   label: string;
   name: string;
-}
-
-interface SocialLinks {
-  name: string;
-  link: string;
-  img: string;
 }
 
 const formFields: FormProps[] = [
@@ -47,26 +44,21 @@ const formFields: FormProps[] = [
   },
 ];
 
-const socials: SocialLinks[] = [
+const socials = [
   {
-    name: "Gmail",
-    link: "mailto:shivamsahni507@gmail.com",
-    img: "", // Add image URLs if needed
+    name: "shivamsahni507@gmail.com",
+    link: "",
+    icon: faEnvelope,
   },
   {
-    name: "Github",
-    link: "",
-    img: "",
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/shivam-sahni-132354227/",
+    icon: faLinkedin,
   },
   {
-    name: "Discord",
-    link: "",
-    img: "",
-  },
-  {
-    name: "X",
-    link: "",
-    img: "",
+    name: "GitHub",
+    link: "https://github.com/1Shivam4",
+    icon: faGithub,
   },
 ];
 
@@ -116,17 +108,34 @@ export default function Contact() {
           <h3 className="text-xl font-semibold text-slate-600 mb-2">
             Social Links
           </h3>
-          {socials.map((soci) => (
-            <a
-              key={soci.name}
-              href={soci.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline hover:text-blue-800 transition duration-200"
-            >
-              {soci.name}
-            </a>
-          ))}
+          {socials.map((soci) =>
+            soci.link ? (
+              <a
+                key={soci.name}
+                href={soci.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-600 hover:underline hover:text-blue-800 transition duration-200"
+              >
+                <FontAwesomeIcon
+                  icon={soci.icon}
+                  className="text-slate-600 mr-2"
+                />
+                {soci.name}
+              </a>
+            ) : (
+              <span
+                key={soci.name}
+                className="text-slate-600 flex items-center"
+              >
+                <FontAwesomeIcon
+                  icon={soci.icon}
+                  className="text-slate-600 mr-2"
+                />
+                {soci.name}
+              </span>
+            )
+          )}
         </div>
 
         {/* Form */}
