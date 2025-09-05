@@ -1,14 +1,9 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FlexDiv } from "../styles/GlobalStyles";
-import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-  faLinkedin,
-  faDiscord,
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram, faTwitter, faLinkedin, faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, IconProp> = {
   faFacebook,
   faTwitter,
   faDiscord,
@@ -18,24 +13,20 @@ const iconMap: Record<string, any> = {
 
 const social = [
   {
-    link: "",
+    link: "https://www.facebook.com/shivam.sahni.739326",
     icon: "faFacebook",
   },
   {
-    link: "",
+    link: "https://www.instagram.com/_sahnishivam/",
     icon: "faInstagram",
   },
   {
-    link: "",
+    link: "https://x.com/ShivamS89244907",
     icon: "faTwitter",
   },
   {
-    link: "",
+    link: "https://www.linkedin.com/in/shivam-sahni-132354227/",
     icon: "faLinkedin",
-  },
-  {
-    link: "",
-    icon: "faDiscord",
   },
 ];
 
@@ -46,10 +37,7 @@ function Footer() {
         {social.map((soci, i) => (
           <li key={i}>
             <a href={soci.link}>
-              <FontAwesomeIcon
-                icon={iconMap[soci.icon]}
-                className="text-slate-700 hover:text-red-600"
-              />
+              <FontAwesomeIcon icon={iconMap[soci.icon]} className="text-slate-700 hover:text-red-600" />
             </a>
           </li>
         ))}

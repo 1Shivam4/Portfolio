@@ -1,15 +1,9 @@
 import { SectionWrapper } from "../styles/GlobalStyles";
 import WordRotator from "./WordRotate";
-import { Button } from "./Button";
 import "../styles/css/basics.css";
-import banner from "/assets/home-banner.png";
+import banner from "/assets/home-banner.jpeg";
 
-const services = [
-  "Web Development",
-  "Software Design & Development",
-  "Deployment",
-  "Artificial Intelligence & Machine Learning",
-];
+const services = ["AWS", "Cloud Computing", "DevOps", "Software Development"];
 
 export default function Intro() {
   return (
@@ -21,18 +15,27 @@ export default function Intro() {
 
           <div className="w-32  border-b-4 border-red-600"></div>
           <div className="text-primary whitespace-pre-wrap leading-relaxed w-full max-w-xl font-extrabold text-2xl md:text-3xl my-3 shadow-sm">
-            <span className="text-slate-600">Services I provide</span>
+            <span className="text-slate-600">What I can Do?</span>
             <span className=" text-red-500">
               <WordRotator words={services} />
             </span>
           </div>
 
-          <div className="text-lg md:text-2xl font-medium text-slate-500">
-            "Passionate software engineer specializing in web development,
-            AI/ML, and building scalable solutions."
+          <div className="text-lg md:text-2xl font-medium text-slate-500 mb-10 ">
+            I’m a Software Engineer who builds, breaks, and reimagines technology to create impactful digital solutions.
           </div>
 
-          <Button name="Contact Me" />
+          {/* <Button name="Contact Me" /> */}
+          <a
+            href="mailto:shivamsahni507@gmail.com"
+            className="my-3 p-3 px-10 rounded-md text-white font-semibold relative overflow-hidden 
+             bg-red-500 transition-all duration-500 ease-in-out 
+             before:content-[''] before:absolute before:top-0 before:left-0 
+             before:w-0 before:h-full before:bg-red-600 before:z-0 
+             before:transition-all before:duration-500 hover:before:w-full z-10"
+          >
+            <span className="relative z-10">Contact Me</span>
+          </a>
         </div>
 
         <div className="w-full md:w-5/6">
