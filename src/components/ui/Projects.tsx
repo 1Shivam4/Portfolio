@@ -33,7 +33,7 @@ export default function Projects() {
   return (
     <SectionWrapper className="relative z-10" id="projects">
       <h2 className="text-4xl font-bold text-slate-600 text-center">Projects</h2>
-      <div className="mx-4 md:mx-24 flex justify-between align-middle flex-wrap relative z-10 pt-10">
+      <div className="mx-4 md:mx-24 flex justify-between gap-5 align-middle flex-wrap relative z-10 pt-10">
         {ProjectIntroProps.map((projectIntro) => (
           <Link to={`/${projectIntro.heading}`} key={projectIntro.heading}>
             {" "}
