@@ -6,28 +6,28 @@ interface Skills {
 
 export const skillsAndTools: Skills[] = [
   {
-    skillName: "DevOps & Cloud (Learning)",
-    tools: ["Google Cloud", "AWS", "Docker", "Kubernetes", "Cloud Computing", "Networking"],
-    note: "Currently exploring cloud platforms and DevOps practices, with a solid understanding of concepts like containerization, orchestration, and scalable infrastructure.",
+    skillName: "Frontend Development",
+    tools: ["React.js", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3"],
+    note: "Proficient in building responsive, performant frontends with React and Next.js. Focused on clean UI, smooth UX, and scalable component architecture.",
   },
   {
-    skillName: "Technologies and Skills",
-    tools: ["Typescript", "Python", "React", "NodeJS", "MongoDB", "MySQL"],
-    note: "Proficient in full-stack development and data analytics, with hands-on experience in building scalable web applications and leveraging cloud infrastructure.",
+    skillName: "Backend Development",
+    tools: ["Node.js", "Express.js", "REST APIs", "BullMQ", "Redis", "JWT"],
+    note: "Experienced in designing resilient backend systems with Node.js — including async job queues, secure authentication, and high-throughput API design.",
+  },
+  {
+    skillName: "Databases",
+    tools: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
+    note: "Hands-on experience with both relational and NoSQL databases — from schema design and complex aggregation pipelines to geospatial queries.",
+  },
+  {
+    skillName: "AI & Integrations",
+    tools: ["AWS Bedrock", "Stripe", "Mapbox", "ChatGPT", "Claude", "Gemini"],
+    note: "Integrated AI-driven content generation via AWS Bedrock and built production-grade integrations with Stripe payments and Mapbox location services.",
   },
   {
     skillName: "Development Tools",
-    tools: ["VSCode", "Cursor AI", "PyCharm IDE", "Git", "Github", "Linux/Unix"],
+    tools: ["VSCode", "Cursor AI", "Git", "GitHub", "Linux/Unix", "Figma", "AWS", "Docker"],
     note: "Comfortable with modern development environments and version control systems, ensuring efficient and collaborative workflows.",
-  },
-  {
-    skillName: "AI tools",
-    tools: ["ChatGPT", "Deep-seek", "Claude", "Gemini"],
-    note: "Actively use AI tools for research, automation, rapid prototyping, and enhancing productivity across development and content generation tasks.",
-  },
-  {
-    skillName: "Design Tools",
-    tools: ["Figma", "Canva", "Draw.io", "Sketch"],
-    note: "Skilled in creating clean UI/UX designs, wireframes, and system diagrams to communicate and visualize ideas effectively.",
   },
 ];

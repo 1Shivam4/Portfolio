@@ -1,3 +1,5 @@
+import { SectionWrapper } from "../styles/GlobalStyles";
+
 interface ExperienceProps {
   title: string;
   company: string;
@@ -16,26 +18,25 @@ interface EducationProps {
 
 const experinceData: ExperienceProps[] = [
   {
-    title: "Software Engineer Trainee",
-    company: "Acroknacks Pvt. Ltd.",
-    location: "Dehradun, Uttarakhand, India",
-    startDate: "2022-Jan-02",
-    endDate: "2024-May-02",
+    title: "Software Engineer",
+    company: "FDC Innovation Labs",
+    location: "Hybrid",
+    startDate: "May 2024",
+    endDate: "Present",
   },
   {
-    title: "Backend Developer",
-    company: "Sartha",
-    location: "Gujarat, India (Remote)",
-    startDate: "2024-Jan-02",
-    endDate: "2024-April-02",
+    title: "Software Engineer Trainee",
+    company: "iResonate",
+    location: "On Premises",
+    startDate: "Jan 2024",
+    endDate: "May 2024",
   },
 ];
 
 const educationData: EducationProps[] = [
   {
     course: "Bachelor of Computer Application",
-    institute:
-      "Shri Guru Ram Rai University (School of Engineering and Technology)",
+    institute: "Shri Guru Ram Rai University (School of Engineering and Technology)",
     location: "Dehradun, Uttarakhand, India",
   },
   {
@@ -52,13 +53,14 @@ const educationData: EducationProps[] = [
 
 export default function Experience() {
   return (
-    <div
-      className="w-full py-10 bg-slate-100 px-4 md:px-32 flex justify-between align-middle flex-wrap relative z-10 "
-      id="experience"
-    >
-      <EduExprCard data={experinceData} heading="Experience" />
-      <EduExprCard data={educationData} heading="Education" />
-    </div>
+    <SectionWrapper className="section-padding relative bg-white" id="experience">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+          <EduExprCard data={experinceData} heading="Experience" />
+          <EduExprCard data={educationData} heading="Education" />
+        </div>
+      </div>
+    </SectionWrapper>
   );
 }
 
@@ -71,43 +73,37 @@ interface EducationCardProps {
 
 const EduExprCard: React.FC<EducationCardProps> = ({ data, heading }) => {
   return (
-    <div className="w-full md:w-1/2">
-      <h2 className="my-5 text-2xl md:text-4xl font-bold text-slate-600 text-center md:text-start">
-        {heading}
-      </h2>
-      {data.map((item, idx) => (
-        <div
-          key={idx}
-          className="my-5 m-auto flex  gap-5 md:gap-10 align-middle"
-        >
-          <span className="mt-1 h-5 w-5 rounded-full border-2 border-rose-600"></span>
-          <div>
-            {"course" in item ? (
-              <>
-                <h3 className="text-lg md:text-2xl font-bold">{item.course}</h3>
-                <p className="text-base md:text-lg text-gray-600">
-                  {item.institute}
+    <div className="w-full">
+      <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-8">{heading}</h2>
+      <div className="space-y-6">
+        {data.map((item, idx) => (
+          <div key={idx} className="flex gap-5 group">
+            <div className="flex flex-col items-center">
+              <span className="mt-1 h-4 w-4 rounded-full bg-accent-purple shadow-glow"></span>
+              {idx < data.length - 1 && <div className="w-0.5 flex-1 bg-primary-200 mt-2"></div>}
+            </div>
+            <div className="pb-6 flex-1">
+              {"course" in item ? (
+                <>
+                  <h3 className="text-lg md:text-xl font-bold text-primary-900 mb-1">{item.course}</h3>
+                  <p className="text-sm md:text-base text-primary-600 mb-1">{item.institute}</p>
+                </>
+              ) : (
+                <>
+                  <h3 className="text-lg md:text-xl font-bold text-primary-900 mb-1">{item.title}</h3>
+                  <p className="text-sm md:text-base text-primary-600 mb-1">{item.company}</p>
+                </>
+              )}
+              <p className="text-sm text-primary-500">{item.location}</p>
+              {item.startDate && (
+                <p className="text-sm text-primary-500 mt-1">
+                  {item.startDate} - {item.endDate}
                 </p>
-              </>
-            ) : (
-              <>
-                <h3 className="text-lg md:text-2xl font-bold">{item.title}</h3>
-                <p className="text-base md:text-lg text-gray-600">
-                  {item.company}
-                </p>
-              </>
-            )}
-            <p className="text-base md:text-lg text-gray-600">
-              {item.location}
-            </p>
-            {item.startDate && (
-              <p className="text-base md:text-lg text-gray-600">
-                {item.startDate} - {item.endDate}
-              </p>
-            )}
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

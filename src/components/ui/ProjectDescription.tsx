@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { FlexCol, SectionWrapper } from "../styles/GlobalStyles";
 import { useParams } from "react-router-dom";
 
@@ -25,9 +26,7 @@ export default function ProjectDetails() {
   const [prjDetails, setPrjDetails] = useState<ProjectDesc | null>(null);
 
   useEffect(() => {
-    const project = ProjectDescProps.find(
-      (prj) => prj.heading === projectParams.projectName
-    );
+    const project = ProjectDescProps.find((prj) => prj.heading === projectParams.projectName);
     setPrjDetails(project || null);
   }, [projectParams]);
 
@@ -35,27 +34,23 @@ export default function ProjectDetails() {
     <>
       {prjDetails ? (
         <SectionWrapper>
+          <Helmet>
+            <title>{prjDetails.heading} — Shivam Sahni</title>
+            <meta
+              name="description"
+              content={`${prjDetails.heading} — a project by Shivam Sahni. Tech stack: ${prjDetails.techStack.join(", ")}.`}
+            />
+          </Helmet>
           <FlexCol className="mx-4 md:mx-24 flex-wrap items-center">
             <div className="flex justify-center items-center">
-              <img
-                src={prjDetails.img}
-                className="p-2 w-full md:w-1/2 object-contain"
-              />
+              <img src={prjDetails.img} className="p-2 w-full md:w-1/2 object-contain" />
             </div>
-            <h2 className="mt-4 text-2xl font-bold text-slate-700">
-              {prjDetails.heading}
-            </h2>
-            <p className="mt-2 md:w-1/2 text-center  text-slate-600">
-              {prjDetails.desc}
-            </p>
+            <h2 className="mt-4 text-2xl font-bold text-slate-700">{prjDetails.heading}</h2>
+            <p className="mt-2 md:w-1/2 text-center  text-slate-600">{prjDetails.desc}</p>
             <div className="mt-4">
               <strong>Tech Stack:</strong> {prjDetails.techStack.join(", ")}
             </div>
-            <a
-              href={prjDetails.projectLink}
-              target="blank"
-              className="my-5 text-red-500 underline font-bold "
-            >
+            <a href={prjDetails.projectLink} target="blank" className="my-5 text-red-500 underline font-bold ">
               Project Link
             </a>
           </FlexCol>

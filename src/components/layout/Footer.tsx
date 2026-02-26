@@ -42,7 +42,7 @@ function Footer() {
           </li>
         ))}
       </ul>
-      <p>Copyright &copy; 2024</p>
+      <p>Copyright &copy; {new Date().getFullYear()}</p>
     </FlexDiv>
   );
 }

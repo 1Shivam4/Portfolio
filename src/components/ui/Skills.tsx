@@ -2,44 +2,62 @@ import { SectionWrapper } from "../styles/GlobalStyles";
 import { skillsAndTools } from "../../data/allData.ts";
 
 export default function Skills() {
+  // Flatten all skills into a single array
+  const allSkills = skillsAndTools.flatMap(category => 
+    category.tools.map(tool => ({
+      name: tool,
+      category: category.skillName
+    }))
+  );
+
   return (
     <SectionWrapper
-      className="relative overflow-hidden z-10 md:py-16"
+      className="section-padding relative overflow-hidden bg-white"
       id="skills"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-5xl font-bold mb-3 text-gray-900">
-            My Skills
-          </h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Technologies and tools I work with regularly
+        {/* Section Header */}
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-4">
+            Skills & Technologies
+          </h2>
+          <p className="text-lg md:text-xl text-primary-600 max-w-2xl mx-auto">
+            Technologies and tools I work with to build modern applications
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-          {skillsAndTools.map((skill) => (
+        {/* Skills Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mb-16">
+          {allSkills.map((skill, idx) => (
             <div
-              key={skill.skillName}
-              className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 border border-red-100 hover:border-red-300"
+              key={`${skill.name}-${idx}`}
+              className="group bg-primary-50 rounded-2xl p-6 text-center 
+                       hover:bg-white hover:shadow-soft transition-all duration-300
+                       border border-transparent hover:border-accent-purple/20
+                       hover:scale-105 cursor-default animate-fade-in"
+              style={{ animationDelay: `${idx * 0.02}s` }}
             >
-              <div className="p-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
-                  {skill.skillName}
-                </h3>
-                <p className="text-gray-700 mb-6 text-center">{skill.note}</p>
+              <p className="text-sm md:text-base font-semibold text-primary-800 group-hover:text-accent-purple transition-colors">
+                {skill.name}
+              </p>
+            </div>
+          ))}
+        </div>
 
-                <div className="flex flex-wrap gap-3 justify-center">
-                  {skill.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-slate-50 text-gray-900 border border-orange-200 hover:bg-red-200 transition-colors"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
+        {/* Categories Overview */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillsAndTools.map((category) => (
+            <div
+              key={category.skillName}
+              className="bg-gradient-soft rounded-2xl p-6 border border-primary-100 
+                       hover:shadow-soft transition-all duration-300"
+            >
+              <h3 className="text-xl font-bold text-primary-900 mb-3">
+                {category.skillName}
+              </h3>
+              <p className="text-sm text-primary-600 leading-relaxed">
+                {category.note}
+              </p>
             </div>
           ))}
         </div>

@@ -1,3 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    /* Design Tokens */
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f8fafc;
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #64748b;
+    --color-accent: #a855f7;
+    
+    /* Spacing */
+    --spacing-section: 6rem;
+    --spacing-container: 2rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-xl: 2rem;
+    
+    /* Transitions */
+    --transition-base: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+  }
+  
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-soft {
+    background: linear-gradient(135deg, 
+      rgba(168, 85, 247, 0.05) 0%, 
+      rgba(236, 72, 153, 0.05) 50%, 
+      rgba(59, 130, 246, 0.05) 100%);
+  }
+  
+  .bg-gradient-glow {
+    background: radial-gradient(circle at 50% 50%, 
+      rgba(168, 85, 247, 0.1) 0%, 
+      transparent 70%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .section-padding {
+    padding-top: var(--spacing-section);
+    padding-bottom: var(--spacing-section);
+  }
+}
